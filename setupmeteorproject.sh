@@ -5,6 +5,14 @@ shareddir="$homedir/shared"
 meteordir="$shareddir/$projectname";
 mockdir="$homedir/mock/$projectname";
 
+echo "Checking for Meteor"
+if [ ! -d "/home/vagrant/.meteor" ]; then
+  echo "Meteor is not installed. Installing it now."
+  curl https://install.meteor.com/ | sh
+else
+  echo "Meteor is installed."
+fi
+
 echo "shared folder = $shareddir";
 echo "meteor folder = $meteordir";
 echo "mongo folder = $mockdir";
