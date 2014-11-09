@@ -15,12 +15,13 @@ vagrant ssh
 
 # VM(Linux)
 ```sh
-curl https://install.meteor.com/ | sh #Install meteor in the VM.
 /vagrant/setupmeteorproject.sh <project name> #Creates the project within the VM.
 cd /home/vagrant/shared/<project name>
 meteor
 ```
-
+* /vagrant/setupmeteorproject.sh
+  * Checks for Meteor and will install it if it doesn't see it.
+  * Note: When cloning this project you will need to have core.autocrlf set to false in your git config or this script will report an error.
 * /home/vagrant/mock/\<project name\> is the location that stores your MongoDB. It is actually mounted using the --bind switch to /home/vagrant/shared/\<project name\>/.meteor.
 * /home/vagrant/shared/\<project name\> is the location where projects will be created with the sh script.
 
